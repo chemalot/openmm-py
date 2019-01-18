@@ -124,7 +124,7 @@ class EnergyComputer(openmm_py.PyCall):
 
         if includeForces:
             # use PyTorch autograd to compute:
-            #     force = - derivative of enrgy wrt. coordinates
+            #     force = - derivative of energy wrt. coordinates
             pred.backward()
             forces = -coords.grad.cpu().numpy()
         else:
@@ -144,15 +144,15 @@ class EnergyComputer(openmm_py.PyCall):
 ```
 
 The actual energy computation is done in the PyTorch module HarmonicModule.
-The EnergyComputer class provides the callback framework to work
-with the openmm_py.PYForce implementation of an 
+The ```EnergyComputer``` class provides the callback framework to work
+with the ```openmm_py.PYForce``` implementation of an 
 [OpenMM::Force](https://simtk.org/api_docs/openmm/api6_0/python/classsimtk_1_1openmm_1_1openmm_1_1Force.html).
 It also computes the forces using the PyTorch autograd framework.
 
 
 To use this EnergyComputer in an OpenMM calculation we must instantiate it and
 use the instance to create an instance of ```openmm_py.PYForce```. This
-force is added to the ```OpenMM:System```:
+force is added to the ```OpenMM::System```:
 
 ```python
 ecomputer = EnergyComputer(nGPU)
