@@ -177,6 +177,12 @@ plugin by Peter Eastman. I would like to thank Peter for a great introduction to
 OpenMM development as a whole!
 
 
+Literature:
+===========
+
+Eastman, P.; Swails, J.; Chodera, J. D.; McGibbon, R. T.; Zhao, Y.; Beauchamp, K. A.; Wang, L.-P.; Simmonett, A. C.; Harrigan, M. P.; Stern, C. D.; et al. [OpenMM 7: Rapid Development of High Performance Algorithms for Molecular Dynamics](https://doi.org/10.1371/journal.pcbi.1005659). PLOS Computational Biology 2017, 13 (7), e1005659.
+
+
 License
 =======
 ```
