@@ -114,12 +114,17 @@ double CudaCalcPYForceKernel::execute(ContextImpl& context, bool includeForces, 
 
     if (includeForces) {
 
+cerr<<"1"<<endl;
         // Use cuda Kernel to upload forces to GPU
         networkForces.upload(res->force.data());
+cerr<<"2"<<endl;
         int paddedNumAtoms = cu.getPaddedNumAtoms();
+cerr<<"3"<<endl;
         void* args[] = {&networkForces.getDevicePointer(), &cu.getForce().getDevicePointer(),
                         &cu.getAtomIndexArray().getDevicePointer(), &numParticles, &paddedNumAtoms};
+cerr<<"4"<<endl;
         cu.executeKernel(addForcesKernel, args, numParticles);
+cerr<<"5"<<endl;
     }
 
     if( PRINT_RESULTS ) {

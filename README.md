@@ -176,6 +176,7 @@ Big parts of the is code were derived from the [openmm-nn](https://github.com/pa
 plugin by Peter Eastman. I would like to thank Peter for a great introduction to his plugin and
 OpenMM development as a whole!
 
+Petr Votava as instrumental in setting up the High Performance Computing enviroment and the OpenMM package at Genentch.
 
 Literature:
 ===========
